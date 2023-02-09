@@ -43,7 +43,7 @@ export class Searchbar extends Component {
             value={query}
             onChange={hendleNemeChange}
             autocomplete="off"
-            autofocus
+            autoFocus
             placeholder="Search images and photos"
           />
           <SearchFormButton type="submit">

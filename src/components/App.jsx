@@ -3,6 +3,7 @@ import { Loader } from './Loader/Loader';
 import { getPhotos } from 'helpers/PixabayApi';
 import { Searchbar } from './Searchbar/Searchbar';
 import { Button } from './Button/Button';
+import { ImegeGallery } from './ImageGallery/ImageGallery';
 
 export class App extends Component {
   state = {
@@ -45,6 +46,10 @@ export class App extends Component {
     });
   };
 
+  handelLoadMore = () => {
+    this.setState(prev => ({ page: prev.page + 1 }));
+  };
+
   render() {
     const { handelSubmit } = this;
     const { totalHits, isLoading, images } = this.state;
@@ -52,9 +57,12 @@ export class App extends Component {
       <div>
         <Searchbar onSubmit={handelSubmit} />
         {isLoading && <Loader />}
-        <>
-          <Button onShow={''} />
-        </>
+        {images && <ImegeGallery images={images} />}
+        {totalHits > 12 && (
+          <>
+            <Button onShow={''} />
+          </>
+        )}
       </div>
     );
   }
