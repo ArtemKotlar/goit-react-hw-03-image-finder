@@ -3,9 +3,9 @@ import {
   SearchbarWrap,
   SearchForm,
   SearchFormButton,
-  SearchFormButtonLabel,
   SearchFormInput,
 } from './Searchbar.styled';
+import { FcSearch } from 'react-icons/fc';
 
 export class Searchbar extends Component {
   state = {
@@ -13,8 +13,8 @@ export class Searchbar extends Component {
     page: 1,
   };
 
-  hendleNemeChange = e => {
-    this.setState({ query: e.currentTarget.value.toLowerCase() });
+  hendleNemeChange = event => {
+    this.setState({ query: event.currentTarget.value.toLowerCase() });
   };
 
   handleSubmit = () => {
@@ -42,12 +42,12 @@ export class Searchbar extends Component {
             type="text"
             value={query}
             onChange={hendleNemeChange}
-            autocomplete="off"
+            autoComplete="off"
             autoFocus
             placeholder="Search images and photos"
           />
           <SearchFormButton type="submit">
-            <SearchFormButtonLabel>Search</SearchFormButtonLabel>
+            <FcSearch />
           </SearchFormButton>
         </SearchForm>
       </SearchbarWrap>

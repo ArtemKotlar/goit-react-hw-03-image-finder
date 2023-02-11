@@ -1,7 +1,7 @@
 import { ImgGallery } from './ImageGallery.styled';
 import { ImageGalleryItem } from 'components/ImageGalleryItem/ImageGalleryItem';
 
-export const ImegeGallery = ({ images }) => {
+export const ImageGallery = ({ images }) => {
   return (
     <ImgGallery>
       {images.map(({ id, webformatURL, largeImageURL, tags }) => {
