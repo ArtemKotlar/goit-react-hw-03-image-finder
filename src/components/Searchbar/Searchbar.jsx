@@ -47,7 +47,7 @@ export class Searchbar extends Component {
             placeholder="Search images and photos"
           />
           <SearchFormButton type="submit">
-            <FcSearch />
+            <FcSearch size={30} />
           </SearchFormButton>
         </SearchForm>
       </SearchbarWrap>
